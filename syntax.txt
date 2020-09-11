@@ -1,0 +1,114 @@
+sort(edges.begin(),edges.end(),[](auto& a,auto& b){   
+    return a[2] < b[2];
+});
+
+Arrays.sort(edges,(a,b)->{
+    return a[2] - b[2]; // this-other. 
+});
+
+PriorityQueue<primsPair> pq=new PriorityQueue<>((a,b)->{
+    return a.weight - b.weight; //this - other
+});
+
+priority_queue<int,vector<int>, greater<int>> pq; //min priority_queue 
+
+//in priority_queue cpp,'-' is replaced by '>'
+
+struct myComp
+{
+    bool operator()(const pair<TreeNode *, int> &t, const pair<TreeNode *, int> &o)
+    {
+        int r1 = t.second / range;
+        int c1 = t.second % range;
+
+        int r2 = o.second / range;
+        int c2 = o.second % range;
+
+        if (r1 == r2 && c1 == c2)
+            return t.first->val > o.first->val; //decreasing , this > other
+
+        if (r1 == r2)
+            return c1 > c2;
+
+        return r1 > r2;
+    }
+};
+
+priority_queue<pair<TreeNode *, int>, vector<pair<TreeNode *, int>>, myComp> q;
+
+
+PriorityQueue<Student> pq = new PriorityQueue<Student>(5, new StudentComparator()); 
+
+class StudentComparator implements Comparator<Student>{ 
+              
+    // Overriding compare()method of Comparator  // for descending order of cgpa 
+    public int compare(Student s1, Student s2) { 
+        
+        if (s1.cgpa < s2.cgpa) 
+            return 1; 
+        else if (s1.cgpa > s2.cgpa) 
+            return -1; 
+        
+        return 0; 
+    } 
+} 
+
+PriorityQueue<>
+
+//java comparator vs comparable=================
+
+class Movie implements Comparable<Movie> 
+{ 
+    private double rating; 
+    private String name; 
+    private int year; 
+  
+    // Used to sort movies by year 
+    public int compareTo(Movie m) 
+    { 
+        return this.year - m.year; 
+    } 
+
+} 
+  
+// Class to compare Movies by ratings 
+class RatingCompare implements Comparator<Movie> 
+{ 
+    public int compare(Movie m1, Movie m2) 
+    { 
+        if (m1.getRating() < m2.getRating()) return -1; 
+        if (m1.getRating() > m2.getRating()) return 1; 
+        else return 0; 
+    } 
+} 
+  
+// Class to compare Movies by name 
+class NameCompare implements Comparator<Movie> 
+{ 
+    public int compare(Movie m1, Movie m2) 
+    { 
+        return m1.getName().compareTo(m2.getName()); 
+    } 
+} 
+
+
+  
+// Compares two intervals according to staring times. 
+bool compareInterval(Interval i1, Interval i2) 
+{ 
+    return (i1.start < i2.start); 
+} 
+sort(arr, arr+n, compareInterval); 
+
+
+
+//operator overloading in cpp
+struct CompareHeight { 
+    bool operator()(Person const& p1, Person const& p2) 
+    {  
+        return p1.height < p2.height; 
+    } 
+}; 
+
+
+In an unordered_set, the value of an element is at the same time its key, that identifies it uniquely. Keys are immutable, therefore, the elements in an unordered_set cannot be modified once in the container - they can be inserted and removed, though.

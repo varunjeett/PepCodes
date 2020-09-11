@@ -1,0 +1,23 @@
+Stablility in Sorting?
+ANS) A sorting algorithm is said to be stable if two objects with equal keys appear in the same order in sorted output,
+as they appear in the input array to be sorted.Some Sorting Algorithms are stable by nature, 
+such as Bubble Sort, Insertion Sort, Merge Sort, Count Sort etc.
+Other non-comparison based sorts such as Counting Sort maintain stability by ensuring that the Sorted Array 
+is filled in a reverse order so that elements with equivalent keys have the same relative position.
+Some sorts such as Radix Sort depend on another sort, with the only requirement that the other sort should be stable.
+
+Which sorting algorithms are unstable?
+Quick Sort, Heap Sort etc., can be made stable by also taking the position of the elements into consideration. 
+
+Can we make any sorting algorithm stable?
+ANS) Any given sorting algo which is not stable can be modified to be stable. 
+There can be sorting algo specific ways to make it stable, but in general, 
+any comparison based sorting algorithm which is not stable by nature can be modified to be stable by 
+changing the key comparison operation so that the comparison of two keys considers position 
+as a factor for objects with equal keys.
+
+What is Binary Insertion Sort?
+We can use binary search to reduce the number of comparisons in normal insertion sort. 
+Binary Insertion Sort uses binary search to find the proper location to insert the selected item at each iteration. 
+In normal insertion, sorting takes O(i) (at ith iteration) in worst case. We can reduce it to O(logi) by using binary search. 
+The algorithm, as a whole, still has a running worst case running time of O(n2) because of the series of swaps required for each insertion.

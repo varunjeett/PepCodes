@@ -1,0 +1,39 @@
+1) - Subarray with given sum :: 
+only positive, naive -> explore all subarray , n*n time ;; efficient -> sliding window(only positive) O(n)
+both positive and negative ,  naive -> explore all subarray , n*n time ;; using hashing and keeping prefix sum O(n) space and time
+TRICK:  for both positive and negative, modify the array by adding the most negative element in all.
+        targetSum = sum + K*abs(minimum element) where K is the length of subarray.. O(1) space..
+
+2) - Equilibrium point , sum of left elements is equal to sum of right elements
+Naive-> go for every index , and loop for left maintain sum, loop in right maintain sum, O(n*n)
+Better-> maintain prefix sum array, for every index,we can get left elements sum and right elements sum (n time , n space)
+            left elements sum : prefix[idx-1] , left elements sum : prefix[last]-prefix[idx] 
+Best->  Keep whole array sum in a variable, at every index , keep substracting the elements on the left , and add them in other variable, say lsum
+At any point, when value of lsum==total sum, thats the index 
+int pivotIndex(vector<int>& nums) {
+        int n=nums.size();
+        
+        if(n==0)
+            return -1;
+        
+        if(n==1)
+            return 0;
+        
+        int right=0;
+        for(int ele:nums)
+        {
+            right+=ele;
+        }
+        
+        int left=0;
+        for(int i=0;i<n;i++)
+        {
+            right-=nums[i];
+            
+            if(left==right)
+                return i;
+            
+            left+=nums[i];
+        }
+        return -1;
+    }

@@ -1,0 +1,42 @@
+Jump search notes::
+Q) How jump search works?
+For example, suppose we have an array arr[] of size n and block (to be jumped) size m. 
+Then we search at the indexes arr[0], arr[m], arr[2m]…..arr[km] and so on. 
+Once we find the interval (arr[km] < x < arr[(k+1)m]), we perform a linear search operation from the index km to find the element x.
+
+Q) What is the optimal block size to be skipped?
+In the worst case, we have to do n/m jumps and if the last checked value is greater than the element to be searched for we perform m-1 comparisons more for linear search. 
+Therefore the total number of comparisons in the worst case will be ((n/m) + m-1). 
+The value of the function ((n/m) + m-1) will be minimum when m = √n. Therefore, the best step size is m = √n.
+This makes the time complexity of Jump Search O(√ n).
+
+Interpolation Search notes::
+The Interpolation Search is an improvement over Binary Search for instances, where the values in a sorted array are uniformly distributed.
+Uniform distribution means, that the values of adjacent array elements have same differnce. 
+Time Complexity: If elements are uniformly distributed, then O (log log n)). In worst case it can take upto O(n).
+Auxiliary Space: O(1)
+
+// The idea of formula is to return higher value of pos
+// when element to be searched is closer to arr[hi]. And
+// smaller value when closer to arr[lo]
+pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
+
+(arr[hi]-arr[lo])/(hi-lo) gives us the value/length ratio. we divide x-arr[lo](value by the former term)
+value/(value/length) = length
+this length is then added to lo.
+Time Complexity : O(Log(Log n)) average case, worst case is O(n) (for Exponentially distributed elements)
+
+
+
+Exponential Search notes::
+
+Exponential search involves two steps:
+Find range where element is present
+Do Binary Search in above found range.
+
+Used for unbounded arrays,
+step 1: first when the bucket which is greater than the element
+step 2: increase the bucket size by multiplying by 2 
+step 3: after finding the bucket, apply binary search on that bucket 
+
+Time Complexity : O(Log n)

@@ -1,0 +1,18 @@
+1. reference vs pointer :========================================================
+You cannot have NULL references. You must always be able to assume that a reference is connected to a legitimate piece of storage.
+Once a reference is initialized to an object, it cannot be changed to refer to another object. Pointers can be pointed to another object at any time.
+A reference must be initialized when it is created. Pointers can be initialized at any time.
+Refernces to an array can be used a pointer, but have to follow the rules of references.
+Refernces to a variable cannot be used a pointer.
+When returning a reference, be careful that the object being referred to does not go out of scope. So it is not legal to return a reference to local var. But you can always return a reference on a static variable.
+https://www.geeksforgeeks.org/references-in-c/
+
+MAJOR POINT : A pointer is a variable that holds a memory address. A reference has the same memory address as the item it references.
+A pointer to a class/struct uses ‘->'(arrow operator) to access it’s members whereas a reference uses a ‘.'(dot operator)
+A pointer needs to be dereferenced with * to access the memory location it points to, whereas a reference can be used directly.
+We should declare and initialize references at single step.
+
+We cannot MAKE AN ARRAY OF REFERENCES BUT WE CAN MAKE A REFERENCE OF AN ARRAY : int (&)val[5]=arr;
+
+
+2.

@@ -1,0 +1,22 @@
+C++
+Priority queue (default is MAX HEAP) :
+1.header file of pq is <queue>.
+2.we can use array/vector to intiliaze like :
+        vector<int> arr = {1, 2, 3};
+        priority_queue<int> pq(arr.begin(), arr.end());
+
+        or
+
+        int arr2[5] = {1, 2, 3, 4, 10000};
+        priority_queue<int> pq(arr2, arr2 + 4); //(start address , end address +1)
+
+3.
+// priority_queue<int, vector<int>> pq;  //by default max
+// priority_queue<int, vector<int>, greater<int>> pq;  //min pq by using greater
+
+IMPORTANT 
+The priority queue datatype is built on top of a container class, which is the structure actually used to maintain the values in the collection.
+There are two containers in the Standard C++ Library that can be used to construct priority queues: vectors or deques. 
+By default, a priority_queue will use vector.
+
+https://docs.oracle.com/cd/E19422-01/819-3703/11_2.htm#:~:text=The%20priority%20queue%20datatype%20is,vectors%20or%20deques.

@@ -1,0 +1,13 @@
+//IMPORTANT :======================
+1.All DS in the collections framework of java can store only objects(wrapper class or custom class objects), not primitive types.
+Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque)
+and classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+2.
+Using Comparable Interface
+A comparable object is capable of comparing itself with another object. The class itself must implements the java.lang.Comparable interface to compare its instances.
+Consider a Movie class that has members like, rating, name, year. Suppose we wish to sort a list of Movies based on year of release. We can implement the Comparable interface with the Movie class, and we override the method compareTo() of Comparable interface.
+--------------------comparable can also be used for sort=-----------------------.
+https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/
+
+3.

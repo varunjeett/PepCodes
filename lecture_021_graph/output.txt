@@ -1,0 +1,7 @@
+a->b d 
+b->a c g 
+c->b e d g 
+d->a c 
+e->c f g 
+f->e g 
+g->f e c b 

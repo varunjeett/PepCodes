@@ -1,0 +1,5 @@
+5,zardik,900
+1,abhi,400
+3,shyam,400
+2,aditya,250
+4,ram,200
