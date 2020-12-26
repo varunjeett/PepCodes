@@ -34,7 +34,7 @@ struct myComp
     }
 };
 
-priority_queue<pair<TreeNode *, int>, vector<pair<TreeNode *, int>>, myComp> q;
+priority_queue<pair<<TreeNode *, int>, vector<pair<TreeNode *, int>>, myComp> q;
 
 
 PriorityQueue<Student> pq = new PriorityQueue<Student>(5, new StudentComparator()); 

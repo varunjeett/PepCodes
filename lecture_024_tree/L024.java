@@ -247,6 +247,7 @@ public class L024 {
         if (root == null) {
             return -1;
         }
+        
         if (root.val == target) {
             printKDown(root, level, null);
             return 1;
@@ -361,11 +362,9 @@ public class L024 {
         dia_global = Math.max(dia_global, l_val + r_val + 2);  //calculate and compare current result
 
         return Math.max(l_val, r_val) + 1;
-
     }
 
     public static int maxtillnow = 0;
-
     public static int leafToLeaf(Treenode root) {
         maxtillnow = 0;
         findSum(root);
@@ -389,8 +388,6 @@ public class L024 {
         else
         return leftMaxNodeToLeaf+root.val;    
     }
-
-
 
     public int maxtillnow2 = (int) -1e8;
     public int maxPathSum(TreeNode root) {

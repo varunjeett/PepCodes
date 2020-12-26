@@ -77,7 +77,7 @@ public class L025 {
         // levelOrder02(root);
         // levelOrder03(root);
         // levelOrder04(root);
-        verticalOrder(root);
+        // verticalOrder(root);
         // System.out.println();
         // verticalOrderSum(root);
     }

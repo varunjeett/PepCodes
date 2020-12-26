@@ -14,10 +14,9 @@ class Edge{
       this->v=v;
       this->w=w;
     }
- 
 };
 
-int N=7;// vertices
+int N=7; //vertices
 vector<vector<Edge>> graph(N,vector<Edge>());
 
 void addEdge(int u,int v,int w){
@@ -127,7 +126,6 @@ int allPath(int src,int des,vector<bool>& arr,string ans)
 
     arr[src]=false;
     return count;
-
 }
 
 class ansPair
@@ -176,7 +174,7 @@ void allSolution(int src, int dest, vector<bool> &vis, int w, string ans, ansPai
 
 void question(){
 
-    // vector <bool>arr(N,false);
+    vector <bool>arr(N,false);
     // if(haspath(7,7,arr))
     //    cout<<"found";
     

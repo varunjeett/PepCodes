@@ -1,27 +1,21 @@
 import java.util.ArrayList;
 
 public class L023 {
-
     public static class Treenode {
-
         int data;
         Treenode left;
         Treenode right;
 
         Treenode(int ele) {
-
             this.data = ele;
             this.left = null;
             this.right = null;
-
         }
 
         Treenode() {
-
             this.data = 0;
             this.left = null;
             this.right = null;
-
         }
     }
 
@@ -113,7 +107,7 @@ public class L023 {
 
         boolean res = false;
 
-        res = res || find(root.left, ele) || find(root.right, ele);
+        res = find(root.left, ele) || find(root.right, ele);
 
         return res;
     }

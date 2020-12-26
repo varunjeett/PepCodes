@@ -17,7 +17,7 @@ public:
 };
 
 static int idx = 0;
-TreeNode *constructTree(vector<int> &arr)
+TreeNode* constructTree(vector<int> &arr)
 {
     if (idx == arr.size() || arr[idx] == -1)
     {
@@ -76,7 +76,7 @@ bool find(TreeNode *node, int ele)
     if (node->val == ele)
         return true;
 
-    bool res = res || find(node->left, ele) || find(node->right, ele);
+    bool res = find(node->left, ele) || find(node->right, ele);
 
     return res;
 }

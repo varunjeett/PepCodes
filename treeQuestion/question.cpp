@@ -339,12 +339,13 @@ class Solution
 }
 
 //creating tree from preOrder iterative.========================================
-TreeNode bstFromPreorder(int[] preorder)
+TreeNode
+bstFromPreorder(int[] preorder)
 {
     int n = preorder.length;
     if (n == 0)
         return null;
-    
+
     Stack<TreeNode> st = new Stack<>();
     TreeNode root = new TreeNode(preorder[0]);
     st.push(root);

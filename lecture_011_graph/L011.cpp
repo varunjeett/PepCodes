@@ -20,7 +20,6 @@ int V=7;
 vector<vector<edge>> graph(V,vector<edge>());
 
 void addEdge(int u,int v,int w){
-
     graph[u].push_back(edge(v,w));
     graph[v].push_back(edge(u,w));
 }
@@ -45,7 +44,7 @@ void constructGraph(){
  addEdge(1,2,10);
  addEdge(2,3,40);
  addEdge(3,4,100);
-//  addEdge(2,5,100);
+ addEdge(2,5,100);
  addEdge(4,5,2);
  addEdge(4,6,3);
  addEdge(5,6,18);
@@ -83,12 +82,11 @@ void removeEdge(int u,int v){
 }
 
 void removeVertex(int vtx){
-  
-    //graph[vtx].clear();  simple built in operation
-
     while(graph[vtx].size()!=0)
     {
-      graph[vtx].erase(graph[vtx].begin());
+        int sz=graph[vtx].size();
+        edge e=graph[vtx][sz-1];
+        removeEdge(vtx,e.v);
     }
 }
 
@@ -230,13 +228,15 @@ void solve(){
     
     vector<bool> vis(V,false);
     constructGraph();
+    removeVertex(5);
+    display();
+
     
     // basic();
     // hamiltonion(2,2,vis,"",0);
     
-    GCC(vis);
-    cout<<ans<<" , "<<ans_string<<endl;
-
+    // GCC(vis);
+    // cout<<ans<<" , "<<ans_string<<endl;
 
 }
 

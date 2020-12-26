@@ -22,7 +22,6 @@ vector<vector<Edge *>> graph(N, vector<Edge *>());
 
 void addEdge(int u, int v, int w)
 {
-
   graph[u].push_back(new Edge(v, w));
   graph[v].push_back(new Edge(u, w));
 }

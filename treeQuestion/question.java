@@ -62,9 +62,8 @@ public class question {
         }
     }
 
+    // binary tree clone with random pointer
 
-    //binary tree clone with random pointer  
-    
     // step1
     public static void addClone(TreeNode root) {
         if (root == null) {
@@ -139,66 +138,110 @@ public class question {
 
 // 979. Distribute Coins in Binary Tree
 
-// If the leaf of a tree has 0 coins (an excess of -1 from what it needs), then we should push a coin from its parent onto the leaf. 
-// If it has say, 4 coins (an excess of 3), then we should push 3 coins off the leaf. 
-// In total, the number of moves from that leaf to or from its parent is excess = Math.abs(num_coins - 1). 
-// Afterwards, we never have to consider this leaf again in the rest of our calculation.
+// If the leaf of a tree has 0 coins (an excess of -1 from what it needs), then
+// we should push a coin from its parent onto the leaf.
+// If it has say, 4 coins (an excess of 3), then we should push 3 coins off the
+// leaf.
+// In total, the number of moves from that leaf to or from its parent is excess
+// = Math.abs(num_coins - 1).
+// Afterwards, we never have to consider this leaf again in the rest of our
+// calculation.
 
 class Solution {
-    int total=0;
+    int total = 0;
+
     public int find(TreeNode root) {
-        if(root==null)
+        if (root == null)
             return 0;
-        
-        int lx=find(root.left);
-        int rx=find(root.right);
-        
-        int cx=Math.abs(lx+rx+root.val-1);
-        total+=cx;
-        
-        return (lx+rx+root.val-1);
-        
+
+        int lx = find(root.left);
+        int rx = find(root.right);
+
+        int cx = Math.abs(lx + rx + root.val - 1);
+        total += cx;
+
+        return (lx + rx + root.val - 1);
+
     }
+
     public int distributeCoins(TreeNode root) {
-        if(root==null)
+        if (root == null)
             return 0;
-        
-        total=0;
+
+        total = 0;
         find(root);
         return total;
     }
-    
+
 }
 
 // 1372. Longest ZigZag Path in a Binary Tree
-class Solution { 
+class Solution {
 
     int mx;
+
     // {current node se left ki taraf,current node se right ki taraf}
     public int[] find(TreeNode root) {
-        
-        //return no of edges
-        if(root==null)
-            return new int[]{-1,-1};
-        
-       
-        int[] ll=find(root.left);
-        
-        int[] rr=find(root.right);
-        
-        int cur_max=Math.max(1+ll[1],1+rr[0]);
-        mx=Math.max(mx,cur_max);
-        
-        return new int[]{1+ll[1],1+rr[0]}; 
+
+        // return no of edges
+        if (root == null)
+            return new int[] { -1, -1 };
+
+        int[] ll = find(root.left);
+
+        int[] rr = find(root.right);
+
+        int cur_max = Math.max(1 + ll[1], 1 + rr[0]);
+        mx = Math.max(mx, cur_max);
+
+        return new int[] { 1 + ll[1], 1 + rr[0] };
     }
-    
+
     public int longestZigZag(TreeNode root) {
-        
-        if(root==null)
+
+        if (root == null)
             return 0;
-        
-        mx=0;
+
+        mx = 0;
         find(root);
         return mx;
+    }
+
+}
+
+// 1609. Even Odd Tree
+
+class Solution {
+
+    public boolean isEvenOddTreeDFS(TreeNode root) {
+        if (root == null)
+            return true;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        boolean ans = isEvenOddTreeHelper(root, map, 0);
+        return ans;
+    }
+
+    private boolean isEvenOddTreeHelper(TreeNode root, HashMap<Integer, Integer> map, int currLevel) {
+        if (root == null)
+            return true;
+        if (currLevel % 2 == 0 && root.val % 2 == 0)
+            return false;
+        if (currLevel % 2 == 1 && root.val % 2 == 1)
+            return false;
+        if (map.containsKey(currLevel)) {
+            int prevKey = map.get(currLevel);
+            if (currLevel % 2 == 0) {
+                // odd and should be in increasing order
+                if (prevKey >= root.val)
+                    return false;
+            } else {
+                // even and should be in decreasing order
+                if (prevKey <= root.val)
+                    return false;
+            }
+        }
+        map.put(currLevel, root.val);
+        return isEvenOddTreeHelper(root.left, map, currLevel + 1)
+                && isEvenOddTreeHelper(root.right, map, currLevel + 1);
     }
 }

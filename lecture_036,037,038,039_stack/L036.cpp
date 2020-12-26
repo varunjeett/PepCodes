@@ -16,6 +16,7 @@ class Mystack{
     Mystack(){
         arr=new int[N];
     }
+    
     Mystack(int lenn){
         arr=new int[lenn];
     }

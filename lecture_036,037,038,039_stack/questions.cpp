@@ -62,12 +62,9 @@ public:
         }
 
         int max_ = 0;
-
         for (int i = 0; i < heights.size(); i++)
         {
-
             int area = heights[i] * (nsor_[i] - nsol_[i] - 1);
-
             max_ = max(max_, area);
         }
         return max_;
