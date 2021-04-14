@@ -72,7 +72,6 @@ void removeVtx(int vtx){
        Edge e=graph[vtx][0];
        removeEdge(vtx, e.v);
     }
-    
 }
 
 void graphConstruct(){

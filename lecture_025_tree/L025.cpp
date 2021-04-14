@@ -102,7 +102,7 @@ void verticalView_PQ(TreeNode *root) //normal
 
     vector<vector<int>> arr(range, vector<int>());
 
-    q.push({root, (-ll)});      //adding ll to add the nodes so that from -2 .... 3 becomes 0 to 5.
+    q.push({root, (-ll)}); //adding ll to add the nodes so that from -2 .... 3 becomes 0 to 5.
 
     while (q.size() != 0)
     {

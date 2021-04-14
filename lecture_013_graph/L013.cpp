@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -73,7 +74,6 @@ vector<int> topodfs(int src, vector<bool> &vis, vector<int> &ans)
 
 void topoSort()
 {
-
   vector<bool> vis(N, false);
   vector<int> ret;
   vector<int> ans;
@@ -136,7 +136,7 @@ void kahnalgo()
   }
 }
 
-bool cycledetectDFS(int src, vector<int> &vis, vector<int> &ans)
+bool cycledetectDFS(int src, vector<int> &vis, unordered_set<int> &ans)
 {
   if (vis[src] == 1)
     return true;
@@ -153,16 +153,18 @@ bool cycledetectDFS(int src, vector<int> &vis, vector<int> &ans)
   }
 
   vis[src] = 2;
-  ans.push_back(src);
-  return res;
 
+  if (res)
+    ans.insert(src);
+
+  return res;
 }
 
 void cycledetect()
 {
   vector<int> vis(N, -1);
   bool res = false;
-  vector<int> ans;
+  unordered_set<int> ans;
   for (int i = 0; i < N; i++)
   {
     if (vis[i] == -1)
@@ -192,3 +194,5 @@ int main()
 {
   solve();
 }
+
+

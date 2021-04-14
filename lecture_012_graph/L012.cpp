@@ -137,8 +137,8 @@ void bfs02(int src, int desti, vector<bool> &vis)
 }
 
 void bfs03(int src, int desti, vector<bool> &vis)
-{ //double while without check for cycle
-
+{
+  //mark true as soon as you put it in the queue, 
   queue<int> q;
   q.push(src);
   int level = 0;
@@ -342,7 +342,7 @@ bool bipartiteBFS(int src, vector<int> &vis)
       for (int i = 0; i < graph[vtx.first].size(); i++)
       {
         Edge *e = graph[vtx.first][i];
-        if (vis[e->v] == -1)
+        if (vis[e->v] == -1)// wherever cycle is present, one of the node automatically gets  in the queue twice
         {
           q.push({e->v, (vtx.second + 1) % 2});
         }

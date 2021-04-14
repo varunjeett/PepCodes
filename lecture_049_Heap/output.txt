@@ -1,5 +1,22 @@
-5,zardik,900
-1,abhi,400
-3,shyam,400
-2,aditya,250
-4,ram,200
+1,9
+5,7
+2,5
+10,4
+3,3
+8,2
+1cur9
+9
+5cur7
+42
+2cur5
+42
+10cur4
+Removed 1 9
+68
+3cur3
+Removed 2 5
+68
+8cur2
+Removed 3 3
+68
+68

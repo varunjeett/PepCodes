@@ -38,7 +38,6 @@ void display(){
 }
 
 void constructGraph(){
-     
  addEdge(0,1,10);
  addEdge(0,3,10);
  addEdge(1,2,10);
@@ -48,11 +47,8 @@ void constructGraph(){
  addEdge(4,5,2);
  addEdge(4,6,3);
  addEdge(5,6,18);
-
  display();
-
  cout<<endl;
-
 }
 
 int retPos(int u1,int v1){
@@ -231,7 +227,7 @@ void solve(){
     removeVertex(5);
     display();
 
-    
+
     // basic();
     // hamiltonion(2,2,vis,"",0);
     

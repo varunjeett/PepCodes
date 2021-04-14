@@ -17,6 +17,7 @@ void display2D(vector<vector<int>> &arr)
     cout << endl;
 }
 
+//plain recursive
 int fibo_01(int N)
 {
     if (N <= 1)
@@ -87,15 +88,15 @@ int mazepath_01(int sr, int sc, int er, int ec)
 
     int count = 0;
 
-    if (sr + 1 <= er)   //down
+    if (sr + 1 <= er) //down
     {
         count += mazepath_01(sr + 1, sc, er, ec);
     }
-    if (sc + 1 <= ec)   //right
+    if (sc + 1 <= ec) //right
     {
         count += mazepath_01(sr, sc + 1, er, ec);
     }
-    if (sr + 1 <= er && sc + 1 <= ec)   //diagonal
+    if (sr + 1 <= er && sc + 1 <= ec) //diagonal
     {
         count += mazepath_01(sr + 1, sc + 1, er, ec);
     }
@@ -113,7 +114,7 @@ int mazepath_memo(int sr, int sc, int er, int ec, vector<vector<int>> &dp)
     {
         return dp[sr][sc];
     }
-    
+
     int count = 0;
     if (sr + 1 <= er) //down
     {
@@ -171,15 +172,15 @@ int mazepath_jump_01(int sr, int sc, int er, int ec)
     int jump = 1;
     int count = 0;
 
-    for (jump = 1; sr + jump <= er; jump++)     // down jump
+    for (jump = 1; sr + jump <= er; jump++) // down jump
     {
         count += mazepath_jump_01(sr + jump, sc, er, ec);
     }
-    for (jump = 1; sc + jump <= ec; jump++)     // right jump
+    for (jump = 1; sc + jump <= ec; jump++) // right jump
     {
         count += mazepath_jump_01(sr, sc + jump, er, ec);
     }
-    for (jump = 1; sr + jump <= er && sc + jump <= ec; jump++)      // diagonal jump
+    for (jump = 1; sr + jump <= er && sc + jump <= ec; jump++) // diagonal jump
     {
         count += mazepath_jump_01(sr + jump, sc + jump, er, ec);
     }
@@ -390,3 +391,4 @@ int main()
     solve();
     return 0;
 }
+

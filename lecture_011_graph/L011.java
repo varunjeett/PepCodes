@@ -91,13 +91,13 @@ public class L011 {
         }
     }
 
+    //without vertex repetition, if we travel a path with (totalvertex-1) length
     public static int hamil_path(ArrayList<edge>[] graph, int src, int N, boolean[] vis, String ans, int osrc) {
 
         if (N == graph.length - 1) {
             System.out.println("Path:" + ans + src);
             if (findEdge(graph, src, osrc) != -1)
                 System.out.println("Cycle:" + ans + src + "->" + osrc);
-
             return 1;
         }
 
@@ -140,12 +140,12 @@ public class L011 {
     }
 
     public static void question(ArrayList<edge>[] graph) {
-        // int src = 0;
-        // boolean[] vis = new boolean[graph.length];
-        // System.out.println(hamil_path(graph, src, 0, vis, "", 0));
+        int src = 0;
+        boolean[] vis = new boolean[graph.length];
+        System.out.println(hamil_path(graph, src, 0, vis, "", 0));
 
-        boolean[] vis2 = new boolean[graph.length];
-        System.out.println(GCC(graph, vis2));
+        // boolean[] vis2 = new boolean[graph.length];
+        // System.out.println(GCC(graph, vis2));
 
     }
 

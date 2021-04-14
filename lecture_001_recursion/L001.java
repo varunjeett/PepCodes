@@ -143,7 +143,7 @@ public class L001 {
         }
 
         find_01(arr, data, s_index + 1); // work in pre area
-        
+
         return;
     }
 

@@ -14,7 +14,7 @@ void display(int idx,vector<int> &arr)
         return ;
 
     string str="";
-    if( (2*idx)+1 < arr.size())
+    if((2*idx)+1 < arr.size())
     {
         str+=to_string(arr[(2*idx)+1]);
     }

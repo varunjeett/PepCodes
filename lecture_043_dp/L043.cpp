@@ -154,6 +154,7 @@ int longestCommonSubstring(string text1, string text2)
     vector<vector<int>> dp(len1 + 1, vector<int>(len2 + 1, -1));
     longestCommonSubstring_recur(text1, text2, 0, 0, dp);
     display2D(dp);
+    
     cout << max_;
 
     // int ans = longestCommonSubstring_tab(text1, text2);
@@ -334,3 +335,145 @@ int main()
 {
     solve();
 }
+
+
+class Solution {
+public:
+    unordered_map<string,int> mp;
+    
+    bool find(string s1,string s2) {
+        
+a            return true;
+        
+        if(s1.length()!=s2.length())
+            return false;
+        
+        for(int i=1;i<s1.length();i++)
+        {
+            //starting index and length is passed for substr
+            
+            //no swapping at current cut, we simply break down the problem recursively
+            string s1_first=s1.substr(0,i);
+            string s1_last=s1.substr(i);
+            
+            string s2_first=s2.substr(0,i);
+            string s2_last=s2.substr(i);
+            
+            bool noswap=find(s1_first,s2_first) && find(s1_last,s2_last);
+            
+            if(noswap)
+                return true;
+            
+            
+            
+            //for swapping at current level, lets say (great, eatgr), call(first 2 letter of s1, last 2 letter of s2) && call(last 3 letters of s1, first 3 letters of s2)
+            
+            string swap_s2_first=s2.substr(0,s1_last.length());
+            string swap_s2_last=s2.substr(s1_last.length());
+            
+            bool swap=find(s1_first,swap_s2_last) && find(s1_last,swap_s2_first);
+            
+            if(swap)
+                return true;
+                  
+        }
+        
+        return false;
+    }
+    bool isScramble(string s1, string s2) {
+        
+    }
+};class Solution {
+public:
+    unordered_map<string,int> mp;
+    
+    bool find(string s1,string s2) {
+        
+a            return true;
+        
+        if(s1.length()!=s2.length())
+            return false;
+        
+        for(int i=1;i<s1.length();i++)
+        {
+            //starting index and length is passed for substr
+            
+            //no swapping at current cut, we simply break down the problem recursively
+            string s1_first=s1.substr(0,i);
+            string s1_last=s1.substr(i);
+            
+            string s2_first=s2.substr(0,i);
+            string s2_last=s2.substr(i);
+            
+            bool noswap=find(s1_first,s2_first) && find(s1_last,s2_last);
+            
+            if(noswap)
+                return true;
+            
+            
+            
+            //for swapping at current level, lets say (great, eatgr), call(first 2 letter of s1, last 2 letter of s2) && call(last 3 letters of s1, first 3 letters of s2)
+            
+            string swap_s2_first=s2.substr(0,s1_last.length());
+            string swap_s2_last=s2.substr(s1_last.length());
+            
+            bool swap=find(s1_first,swap_s2_last) && find(s1_last,swap_s2_first);
+            
+            if(swap)
+                return true;
+                  
+        }
+        
+        return false;
+    }
+    bool isScramble(string s1, string s2) {
+        
+    }
+};
+class Solution {
+public:
+    unordered_map<string,int> mp;
+    
+    bool find(string s1,string s2) {
+        
+a            return true;
+        
+        if(s1.length()!=s2.length())
+            return false;
+        
+        for(int i=1;i<s1.length();i++)
+        {
+            //starting index and length is passed for substr
+            
+            //no swapping at current cut, we simply break down the problem recursively
+            string s1_first=s1.substr(0,i);
+            string s1_last=s1.substr(i);
+            
+            string s2_first=s2.substr(0,i);
+            string s2_last=s2.substr(i);
+            
+            bool noswap=find(s1_first,s2_first) && find(s1_last,s2_last);
+            
+            if(noswap)
+                return true;
+            
+            
+            
+            //for swapping at current level, lets say (great, eatgr), call(first 2 letter of s1, last 2 letter of s2) && call(last 3 letters of s1, first 3 letters of s2)
+            
+            string swap_s2_first=s2.substr(0,s1_last.length());
+            string swap_s2_last=s2.substr(s1_last.length());
+            
+            bool swap=find(s1_first,swap_s2_last) && find(s1_last,swap_s2_first);
+            
+            if(swap)
+                return true;
+                  
+        }
+        
+        return false;
+    }
+    bool isScramble(string s1, string s2) {
+        
+    }
+};
